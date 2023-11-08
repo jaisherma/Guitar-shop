@@ -15,8 +15,8 @@ const passport = require('passport');
  * DB connection
  */
 
-//const mongoUri = `mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASS}@${process.env.DB_HOST}/?retryWrites=true&w=majority`
-const mongoUri = process.env.DATABASE.replace('<password>', process.env.DB_PASS)
+const mongoUri = `mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASS}@${process.env.DB_HOST}/?retryWrites=true&w=majority`;
+const mongoUri = process.env.DATABASE.replace('kill', process.env.DB_PASS)
 dbConnection(mongoUri)
 
 mongoose.Promise = global.Promise;
