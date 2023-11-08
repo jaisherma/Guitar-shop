@@ -1,0 +1,22 @@
+services:
+  webapp:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      - DB_ADMIN=admin
+      - DB_PASS=kill
+      - DB_HOST=db
+    links:
+      - db
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mydata:/data/db
+
+volumes:
+  mydata:
